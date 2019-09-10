@@ -2,10 +2,17 @@
   text-align: center;
   font-family: 'IBM Plex Mono', monospace;
 }
+.navbar {
+  box-shadow: 0 0px 10px rgba(128, 128, 128, 0.25);
+}
 .article-title{
   padding-top: 40px;
   padding-bottom: 40px;
   font-size: 35px;
+}
+.article-body{
+  text-align: left;
+  font-size: 20px;
 }
 /* .App {
   text-align: center;
