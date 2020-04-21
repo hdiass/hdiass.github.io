@@ -5,15 +5,17 @@ import { Button, Navbar, Nav, NavDropdown, Form, FormControl } from 'react-boots
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
 import Container from 'react-bootstrap/Container'
+import { LinkContainer } from "react-router-bootstrap";
+import { Link } from 'react-router-dom'
 
 function Article(props) {
   return (<article>
-  <div class="article-title">
-    <a href="https://hdiass.github.io" title={props.title}>{props.title}</a>
-  </div>
-    <div class="article-body">
-    {props.articleShrink}
+    <div className="article-title">
+      <Link to="/about">{props.title}</Link>
     </div>
+    <div className="article-body">
+      {props.articleShrink}
+    </div>  
   </article>);
 }
 function App() {
@@ -24,7 +26,7 @@ function App() {
           rel="stylesheet"
           href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-          crossorigin="anonymous"
+          crossOrigin="anonymous"
         />
         <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono&display=swap" rel="stylesheet"></link>
         <div>
@@ -33,6 +35,9 @@ function App() {
               <Navbar.Toggle aria-controls="basic-navbar-nav" />
               <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto">
+                  <LinkContainer to="/about">
+                    <Nav.Link>About</Nav.Link>
+                  </LinkContainer>
                   <Nav.Link href="#home">Home</Nav.Link>
                   <Nav.Link href="#link">Link</Nav.Link>
                   <NavDropdown title="Dropdown" id="basic-nav-dropdown">
@@ -51,14 +56,14 @@ function App() {
             </Navbar>
           </div>
         </header>
-        <div class="articles">
+        <div className="articles">
         <Container>
          <Row></Row>
           <Row>
             <Col md={{ span: 8, offset: 2 }}>
-            <Article title="Some Sweet Article" articleShrink="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum." />
+            <Article title="Some Sweet Article" articleShrink="Lorem Ipsum is simply dummy text of the printing and typesetting industry. " />
             <Article title="Some Top Article" articleShrink="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum." />
-            <Article title="Some Top Article" articleShrink="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum." />
+            <Article title="Some Nice Article" articleShrink="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum." />
             </Col>
           </Row>
         </Container>
